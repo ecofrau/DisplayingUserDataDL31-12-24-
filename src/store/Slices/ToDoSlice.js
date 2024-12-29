@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchToDos = createAsyncThunk(
-  "todos/fetchToDos",
+export const fetchTodos = createAsyncThunk(
+  "todos/fetchTodos",
   async (_, thunkAPI) => {
     try {
       const response = await fetch(
@@ -39,14 +39,14 @@ export const todoSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchToDos.pending, (state) => {
+      .addCase(fetchTodos.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchToDos.fulfilled, (state, action) => {
+      .addCase(fetchTodos.fulfilled, (state, action) => {
         state.loading = false;
         state.list = action.payload;
       })
-      .addCase(fetchToDos.rejected, (state, action) => {
+      .addCase(fetchTodos.rejected, (state, action) => {
         state.loading = false;
         state.list = action.payload;
       });

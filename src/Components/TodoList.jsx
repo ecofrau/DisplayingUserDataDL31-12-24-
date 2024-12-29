@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchToDos } from "../store/Slices/ToDoSlice";
+import { fetchTodos } from "../store/Slices/TodoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SingleTodo from "./SingleTodo";
 
@@ -11,7 +11,7 @@ function TodoList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchToDos());
+    dispatch(fetchTodos());
   }, [dispatch]);
 
   if (loading) {

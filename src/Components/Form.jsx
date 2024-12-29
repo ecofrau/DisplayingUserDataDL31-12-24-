@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { add } from "../store/Slices/ToDoSlice";
+import { add } from "../store/Slices/TodoSlice";
 
 function Form() {
   const dispatch = useDispatch();
